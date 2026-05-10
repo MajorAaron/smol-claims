@@ -1,0 +1,7 @@
+{
+  "name": "smol-claims",
+  "version": "1.0.0",
+  "description": "Justice for petty grievances. AI judge, community jury.",
+  "private": true,
+  "dependencies": {}
+}

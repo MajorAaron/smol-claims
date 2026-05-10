@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smol Claims — File Your Case</title>
+  <meta name="description" content="Submit your petty grievance. AI judge issues a structured ruling. Community jury votes. Get a shareable verdict card.">
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <meta property="og:title" content="Smol Claims — Justice for petty grievances">
+  <meta property="og:description" content="AI judge. Community jury. Shareable verdicts. File your case.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <header class="court-header">
+    <a href="/" class="brand">
+      <img src="logo.png" alt="" class="brand-logo" onerror="this.style.display='none'">
+      <span class="brand-text">Smol Claims</span>
+    </a>
+    <nav class="court-nav">
+      <a href="#docket">Public Docket</a>
+      <a href="/">About the Court</a>
+    </nav>
+  </header>
+
+  <main class="court-main">
+    <section class="hero-block">
+      <div class="court-seal">⚖</div>
+      <h1>The Court of Smol Claims</h1>
+      <p class="hero-sub">Submit your petty grievance. The AI judge will issue a verdict. The jury (the internet) will vote. You will receive a Shareable Court Order.</p>
+    </section>
+
+    <!-- Step 1: File a case -->
+    <section class="filing-block" id="filing">
+      <div class="filing-card">
+        <div class="filing-header">
+          <span class="case-number">CASE NO. <span id="next-case-no">PENDING</span></span>
+          <span class="filing-status">NOW IN SESSION</span>
+        </div>
+        <h2>State your grievance</h2>
+        <p class="filing-instruction">Describe what happened in plain English. The court accepts disputes about roommates, partners, friends, family, coworkers, group chats, and minor injustices of all kinds. <strong>Do not include real names</strong> — the court will redact them.</p>
+        <form id="case-form">
+          <textarea
+            id="grievance"
+            placeholder="Example: My roommate keeps using my expensive olive oil and acting like it's communal. I bought it specifically for my own cooking. Am I being petty for marking my bottle?"
+            rows="6"
+            maxlength="1200"
+            required></textarea>
+          <div class="filing-meta">
+            <span id="char-count">0 / 1200</span>
+            <select id="judge-style">
+              <option value="standard">Standard Judge</option>
+              <option value="judge-judy">Judge Judy Mode</option>
+              <option value="supreme-court">Supreme Court Mode</option>
+              <option value="medieval">Medieval Tribunal</option>
+              <option value="midwestern-mom">Midwestern Mom</option>
+            </select>
+          </div>
+          <button type="submit" class="file-btn" id="file-btn">
+            <span class="btn-label">⚖ File This Case</span>
+            <span class="btn-spinner" hidden>The court is deliberating…</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Step 2: Verdict (revealed after AI rules) -->
+    <section class="verdict-section" id="verdict-section" hidden>
+      <article class="verdict-card" id="verdict-card">
+        <header class="verdict-header">
+          <div class="verdict-stamp">
+            <span class="stamp-line">SMOL CLAIMS COURT</span>
+            <span class="stamp-divider">★</span>
+            <span class="stamp-line">OFFICIAL RULING</span>
+          </div>
+          <h2 id="case-title">Case Title</h2>
+          <div class="case-id-line">Case No. <span id="case-id">—</span></div>
+        </header>
+
+        <div class="verdict-body">
+          <div class="ruling-section ruling-verdict">
+            <span class="ruling-label">VERDICT</span>
+            <h3 id="verdict-headline">—</h3>
+          </div>
+
+          <div class="ruling-section">
+            <span class="ruling-label">APPLICABLE LAW</span>
+            <p id="applicable-law">—</p>
+          </div>
+
+          <div class="ruling-section">
+            <span class="ruling-label">REASONING</span>
+            <p id="verdict-text">—</p>
+          </div>
+
+          <div class="ruling-section">
+            <span class="ruling-label">DISSENTING OPINION</span>
+            <p id="dissent">—</p>
+          </div>
+
+          <div class="ruling-section ruling-remedy">
+            <span class="ruling-label">RECOMMENDED REMEDY</span>
+            <p id="remedy">—</p>
+          </div>
+        </div>
+
+        <footer class="verdict-footer">
+          <div class="signature-block">
+            <span class="signature-line">Honorable A.I. Magistrate</span>
+            <span class="signature-date" id="verdict-date">—</span>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Jury voting -->
+      <div class="jury-block">
+        <h3>Now: the jury decides</h3>
+        <p class="jury-instruction">Do you uphold or overturn the AI's ruling? Cast your vote.</p>
+        <div class="vote-buttons">
+          <button class="vote-btn vote-uphold" id="uphold-btn" data-vote="uphold">
+            <span class="vote-icon">✓</span>
+            <span class="vote-label">Uphold</span>
+            <span class="vote-count" id="uphold-count">0</span>
+          </button>
+          <button class="vote-btn vote-overturn" id="overturn-btn" data-vote="overturn">
+            <span class="vote-icon">✗</span>
+            <span class="vote-label">Overturn</span>
+            <span class="vote-count" id="overturn-count">0</span>
+          </button>
+        </div>
+        <p class="vote-status" id="vote-status"></p>
+      </div>
+
+      <!-- Share -->
+      <div class="share-block">
+        <h3>Send to the group chat</h3>
+        <div class="share-buttons">
+          <button class="share-btn" data-share="copy">📋 Copy Link</button>
+          <button class="share-btn" data-share="twitter">𝕏 Post on X</button>
+          <button class="share-btn" data-share="reddit">↗ Post to Reddit</button>
+        </div>
+        <button class="file-another" onclick="resetForm()">⚖ File Another Case</button>
+      </div>
+
+      <!-- Email capture -->
+      <div class="newsletter-block">
+        <h3>Get the Daily Docket</h3>
+        <p>One email each morning with the most absurd verdicts of the day.</p>
+        <form id="subscribe-form" class="subscribe-form-inline">
+          <input type="email" id="subscribe-email" placeholder="you@example.com" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="subscribe-status" id="subscribe-status"></p>
+      </div>
+    </section>
+
+    <!-- Public docket -->
+    <section class="docket-section" id="docket">
+      <div class="docket-header">
+        <h2>Public Docket</h2>
+        <p>Recent rulings from the bench</p>
+      </div>
+      <div class="docket-list" id="docket-list">
+        <div class="docket-empty">Loading recent cases…</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="court-footer">
+    <p>&copy; 2026 Smol Claims Court · A Major Solutions Studio production · This is a humor product. AI rulings are not legal advice.</p>
+    <p><a href="/">Back to home</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_QLq1IyOJF3FIKXvF462tepbZqLj4hHUl5j3OkXE1ReT', {api_host:'https://us.i.posthog.com'});
+  </script>
+</body>
+</html>

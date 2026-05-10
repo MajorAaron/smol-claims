@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smol Claims — Justice for petty grievances. AI judge, community jury.</title>
+  <meta name="description" content="Submit your pettiest grievance. An AI judge issues a structured ruling. The internet jury votes. Get a shareable verdict card to settle every 'I told you so.'">
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="landing.css">
+  <meta property="og:title" content="Smol Claims — Justice for petty grievances">
+  <meta property="og:description" content="AI judge. Community jury. Shareable verdicts. Settle every group-chat dispute.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Smol Claims — Justice for petty grievances">
+  <meta name="twitter:description" content="AI judge. Community jury. Shareable verdicts.">
+</head>
+<body>
+  <header class="court-header">
+    <a href="/" class="brand">
+      <img src="logo.png" alt="" class="brand-logo" onerror="this.style.display='none'">
+      <span class="brand-text">Smol Claims</span>
+    </a>
+    <nav class="court-nav">
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Tiers</a>
+      <a href="/tool.html" class="nav-cta">File a Case</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="case-badge">EST. 2026 · NOW IN SESSION</div>
+        <h1>The court of <em>extremely</em> petty grievances.</h1>
+        <p class="hero-pitch">An AI judge. A community jury. Shareable verdict cards. Settle every dumb argument from your group chat — finally and with paperwork.</p>
+        <div class="hero-cta-row">
+          <a href="#demo" class="cta-primary">⚖ Try the courtroom</a>
+          <a href="/tool.html" class="cta-ghost">File a real case →</a>
+        </div>
+        <ul class="hero-tags">
+          <li>Roommate fights</li>
+          <li>Group-chat disputes</li>
+          <li>Partner annoyances</li>
+          <li>Friend faux pas</li>
+          <li>Office grievances</li>
+        </ul>
+      </div>
+      <div class="hero-art">
+        <div class="hero-card">
+          <div class="hero-card-stamp">SMOL CLAIMS COURT · OFFICIAL RULING</div>
+          <h3>Plaintiff v. The Olive Oil Bandit</h3>
+          <div class="hero-card-meta">Case No. SC-26-A4F2X</div>
+          <div class="hero-card-verdict">
+            <span class="verdict-tag">VERDICT</span>
+            <p>FOR THE PLAINTIFF. The roommate must purchase replacement olive oil and acknowledge the doctrine of "Designated Pantry Sovereignty."</p>
+          </div>
+          <div class="hero-card-tally">
+            <span>✓ 1,284 uphold</span>
+            <span>✗ 96 overturn</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO -->
+    <section class="demo" id="demo">
+      <div class="section-head">
+        <h2>Try a hearing right now</h2>
+        <p>Submit a real (or hypothetical) petty grievance. The court will deliver a verdict in under 30 seconds.</p>
+      </div>
+      <div class="demo-card">
+        <form id="demo-form">
+          <textarea
+            id="demo-grievance"
+            placeholder="Example: My partner keeps borrowing my charger and never returning it. I now have to buy three. Am I overreacting?"
+            rows="5"
+            maxlength="1200"
+            required></textarea>
+          <div class="demo-meta">
+            <select id="demo-judge-style">
+              <option value="standard">Standard Judge</option>
+              <option value="judge-judy">Judge Judy Mode</option>
+              <option value="supreme-court">Supreme Court Mode</option>
+              <option value="medieval">Medieval Tribunal</option>
+              <option value="midwestern-mom">Midwestern Mom</option>
+            </select>
+            <button type="submit" class="demo-btn" id="demo-btn">
+              <span class="btn-label">⚖ Issue Verdict</span>
+              <span class="btn-spinner" hidden>The court is deliberating…</span>
+            </button>
+          </div>
+        </form>
+        <div class="demo-result" id="demo-result" hidden>
+          <div class="demo-stamp">★ OFFICIAL RULING ★</div>
+          <h3 id="demo-title">—</h3>
+          <div class="demo-headline" id="demo-headline">—</div>
+          <div class="demo-section">
+            <span class="demo-label">APPLICABLE LAW</span>
+            <p id="demo-law">—</p>
+          </div>
+          <div class="demo-section">
+            <span class="demo-label">REASONING</span>
+            <p id="demo-text">—</p>
+          </div>
+          <div class="demo-section">
+            <span class="demo-label">REMEDY</span>
+            <p id="demo-remedy">—</p>
+          </div>
+          <a href="/tool.html" class="demo-tool-link">⚖ File the full case in the courtroom →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how" id="how">
+      <div class="section-head">
+        <h2>How the court works</h2>
+        <p>Three steps. Zero lawyers. Real receipts.</p>
+      </div>
+      <div class="how-grid">
+        <article class="how-card">
+          <div class="how-num">I.</div>
+          <h3>File your grievance</h3>
+          <p>Describe what happened in plain English. The court accepts disputes about roommates, partners, friends, family, coworkers — and group chats most of all.</p>
+        </article>
+        <article class="how-card">
+          <div class="how-num">II.</div>
+          <h3>The AI judge rules</h3>
+          <p>In under 30 seconds, you get a structured ruling: applicable law, reasoning, dissent, and a recommended remedy. Pick from 5 judge personalities.</p>
+        </article>
+        <article class="how-card">
+          <div class="how-num">III.</div>
+          <h3>The jury votes</h3>
+          <p>The internet uphold-or-overturns the AI's call. You walk away with a shareable verdict card to drop in the group chat as the official ruling.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section class="cases">
+      <div class="section-head">
+        <h2>What's on the docket</h2>
+        <p>The kinds of grievances Smol Claims was built for.</p>
+      </div>
+      <div class="cases-grid">
+        <div class="case-tile">"My roommate keeps eating my labeled leftovers."</div>
+        <div class="case-tile">"My partner snores through every podcast I play."</div>
+        <div class="case-tile">"My friend never returns the books I lend."</div>
+        <div class="case-tile">"My coworker microwaves fish in the breakroom."</div>
+        <div class="case-tile">"My sister-in-law parks in my spot every visit."</div>
+        <div class="case-tile">"My group chat is divided on whether to cancel plans the morning of."</div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+      <div class="section-head">
+        <h2>Tiers of justice</h2>
+        <p>Start free. Upgrade when the docket fills up.</p>
+      </div>
+      <div class="pricing-grid">
+        <article class="tier">
+          <div class="tier-name">Petitioner</div>
+          <div class="tier-price">$0<span>/mo</span></div>
+          <ul>
+            <li>1 case per week</li>
+            <li>Standard AI verdict</li>
+            <li>Basic share card</li>
+            <li>Public docket access</li>
+          </ul>
+          <a href="/tool.html" class="tier-cta">Start filing</a>
+        </article>
+        <article class="tier tier-featured">
+          <div class="tier-tag">Most filed</div>
+          <div class="tier-name">Defense Counsel</div>
+          <div class="tier-price">$5<span>/mo</span></div>
+          <ul>
+            <li>Unlimited cases</li>
+            <li>5 judge personalities</li>
+            <li>Anti-doxx pre-review</li>
+            <li>Ad-free experience</li>
+            <li>"Court order" PDF export</li>
+          </ul>
+          <a href="/tool.html" class="tier-cta tier-cta-primary">Reserve your bench</a>
+        </article>
+        <article class="tier">
+          <div class="tier-name">Bench Member</div>
+          <div class="tier-price">$12<span>/mo</span></div>
+          <ul>
+            <li>Everything in Defense Counsel</li>
+            <li>3x jury vote weight</li>
+            <li>Custom courtroom URL</li>
+            <li>Private group "tribunals"</li>
+          </ul>
+          <a href="/tool.html" class="tier-cta">Take the bench</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="section-head">
+        <h2>Frequently filed motions</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>Is this real legal advice?</summary>
+          <p>Absolutely not. Smol Claims is a humor product. The AI judge issues mock rulings to settle petty disputes. For actual legal matters, please consult an actual attorney.</p>
+        </details>
+        <details>
+          <summary>Are real names visible?</summary>
+          <p>The AI is instructed to redact proper nouns and replace them with descriptors like "the roommate" or "the partner." Defense Counsel tier adds an extra anti-doxx pre-review step before the case becomes public.</p>
+        </details>
+        <details>
+          <summary>Can the other party respond?</summary>
+          <p>Yes — when filing, you can generate an invitation link for the other party to submit a counter-claim. The AI judge then re-rules with both sides on the record. (Coming soon for Defense Counsel.)</p>
+        </details>
+        <details>
+          <summary>What happens to the cases I file?</summary>
+          <p>By default, your case (with names redacted) appears on the public docket so the jury can vote on it. Defense Counsel and Bench Member tiers can mark cases private.</p>
+        </details>
+        <details>
+          <summary>What if my dispute is actually serious?</summary>
+          <p>If the AI detects real abuse, illegal activity, or self-harm, it issues a "REFERRED TO HIGHER COURT" ruling and points you to professional resources instead of issuing a humor verdict.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- EMAIL CTA -->
+    <section class="email-cta">
+      <div class="email-card">
+        <h2>Subscribe to The Daily Docket</h2>
+        <p>One email each morning with the day's most absurd verdicts. The newsletter your group chat will quote.</p>
+        <form id="subscribe-form">
+          <input type="email" id="subscribe-email" placeholder="you@example.com" required>
+          <button type="submit">Get the Docket</button>
+        </form>
+        <p class="subscribe-status" id="subscribe-status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="court-footer">
+    <p>&copy; 2026 Smol Claims Court · A Major Solutions Studio production.</p>
+    <p>This is a humor product. AI rulings are not legal advice.</p>
+  </footer>
+
+  <script src="landing.js"></script>
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_QLq1IyOJF3FIKXvF462tepbZqLj4hHUl5j3OkXE1ReT', {api_host:'https://us.i.posthog.com'});
+  </script>
+</body>
+</html>
