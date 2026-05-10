@@ -30,7 +30,7 @@ exports.handler = async (event) => {
           {
             type: 'execute',
             stmt: {
-              sql: 'INSERT INTO subscribers (email, idea_slug, source) VALUES (?, ?, ?) ON CONFLICT(email) DO NOTHING',
+              sql: 'INSERT INTO subscribers (email, idea_slug, source) VALUES (?, ?, ?) ON CONFLICT(email, idea_slug) DO NOTHING',
               args: [
                 { type: 'text', value: email },
                 { type: 'text', value: IDEA_SLUG },
